@@ -4,26 +4,31 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2023/06/03/hello-world/"/>
-      <url>/2023/06/03/hello-world/</url>
+      <title>Build Your Own Password Manager with Python</title>
+      <link href="/Build-Your-Own-Password-Manager-with-Python/"/>
+      <url>/Build-Your-Own-Password-Manager-with-Python/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>中文测试</title>
-      <link href="/2023/06/03/chinese-test/"/>
-      <url>/2023/06/03/chinese-test/</url>
-      
-        <content type="html"><![CDATA[<p>This is a chinese test post to show you how chinese is displayed.</p><h2 id="中文部分"><a href="#中文部分" class="headerlink" title="中文部分"></a>中文部分</h2><p>善我王上魚、產生資西員合兒臉趣論。畫衣生這著爸毛親可時，安程幾？合學作。觀經而作建。都非子作這！法如言子你關！手師也。</p><p>也座論頭室業放。要車時地變此親不老高小是統習直麼調未，行年香一？</p><p>就竟在，是我童示讓利分和異種百路關母信過明驗有個歷洋中前合著區亮風值新底車有正結，進快保的行戰從：弟除文辦條國備當來際年每小腳識世可的的外的廣下歌洲保輪市果底天影；全氣具些回童但倒影發狀在示，數上學大法很，如要我……月品大供這起服滿老？應學傳者國：山式排只不之然清同關；細車是！停屋常間又，資畫領生，相們制在？公別的人寫教資夠。資再我我！只臉夫藝量不路政吃息緊回力之；兒足灣電空時局我怎初安。意今一子區首者微陸現際安除發連由子由而走學體區園我車當會，經時取頭，嚴了新科同？很夫營動通打，出和導一樂，查旅他。坐是收外子發物北看蘭戰坐車身做可來。道就學務。</p><h2 id="國新故"><a href="#國新故" class="headerlink" title="國新故"></a>國新故</h2><p>工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？化經溫詩。只賽嚴大一主價世哥受的沒有中年即病行金拉麼河。主小路了種就小為廣不？</p><blockquote><p>工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<div align="center"><img src="https://i.ibb.co/qyjfYBf/cyber-crime.png" width="40%" height="40%" alt="logo" /><h1>Password Manager</h1><h3>A simple desktop password management tool</h3></div><p>The <strong>Password Manager</strong> <a href="https://github.com/Freedempire/PasswordManager/blob/master/README.md">(github repo)</a> is a simple <em>windows</em> desktop application that allows users to manage their passwords securely and easily. It uses <a href="https://en.wikipedia.org/wiki/Scrypt">scrypt</a> password-based key derivation function from standard package <a href="https://docs.python.org/3/library/hashlib.html">hashlib</a> for hashing the master password for each user of the app, and stores the hash value in a database. The password records to be managed are encrypted with unique salt using <a href="https://cryptography.io/en/latest/fernet/">Fernet</a> from <a href="https://pypi.org/project/cryptography/">cryptography</a> package.</p><h2 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h2><h3 id="Login-x2F-Signup-Frame"><a href="#Login-x2F-Signup-Frame" class="headerlink" title="Login &#x2F; Signup Frame"></a>Login &#x2F; Signup Frame</h3><p><img src="https://i.ibb.co/YLXjvcQ/screenshot-login.png" alt="login"></p><h3 id="Password-Enties-Frame"><a href="#Password-Enties-Frame" class="headerlink" title="Password Enties Frame"></a>Password Enties Frame</h3><p><img src="https://i.ibb.co/hVKDhNY/screenshot-passwords.png" alt="passwords"></p><h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul><li><strong>Multiple</strong> users can use the app, each with their own password and unique salt.</li><li>Master password is hashed using <strong>scrypt</strong> and stored in database.</li><li>Password records are encrypted with unique salt using <code>Fernet</code> from <code>cryptography</code> package.</li><li>Records can be easily <strong>searched</strong> and <strong>manipulated</strong>.</li><li>App can generate <strong>random</strong> passwords triggered by typing ‘[random]’ in the password input box.</li></ul><h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><ol><li>Clone the repository to your local machine using <code>git clone https://github.com/Freedempire/PasswordManager.git</code></li><li>Install the required dependencies using <code>pip install -r requirements.txt</code></li><li>Run the app using <code>python pmapp.py</code></li></ol><h2 id="Basic-Usage"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage</h2><ol><li>Create a new user account by entering a new username and password then clicking on the “Sign Up” button and finish the password confirmation.</li><li>Log in to the app using your username and password then clicking on the “Log In” button.</li><li>To add a new password record, fill in the required details then click on the “Add” button.</li><li>To edit a password record, first double-click the record from the list and make modifications as you wish, finally click on the “Update” button.</li><li>To delete a password record, double-click the record from the list and then click on the “Delete” button.</li><li>To generate a random password, simply type in ‘[random]’ in the Password input box of the details section, then press <kbd>Tab</kbd> or <kbd>Enter</kbd> to trigger the auto generation.</li><li>You can also use <kbd>Tab</kbd> or <kbd>Enter</kbd> to jump from one input box to the next while editing password entry.</li><li>The “Clear” button can be used to clear all inputs in the input boxes. It also clears the current selection status, i.e. the status shows which has been lastly double-clicked.</li></ol><h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><p>This app takes security seriously and implements several measures to ensure the safety of user data. The use of scrypt for hashing the master password and unique salt with Fernet for encrypting the password records provide strong protection against brute force and dictionary attacks. Additionally, the app does not store any plaintext passwords or the master key, further reducing the risk of data breaches.</p><h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>This project is licensed under the MIT License - see the <a href="https://opensource.org/license/mit/">LICENSE</a> file for details.</p><p>Copyright © Freedempire. All rights reserved.</p>]]></content>
       
       
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> password </tag>
+            
+            <tag> cryptography </tag>
+            
+            <tag> tkinter </tag>
+            
+        </tags>
       
     </entry>
     

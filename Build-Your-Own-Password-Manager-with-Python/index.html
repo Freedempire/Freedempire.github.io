@@ -1,0 +1,272 @@
+<!DOCTYPE html><html class="hide-aside" lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Build Your Own Password Manager with Python | FREEDEMPIRE | 自由帝國</title><meta name="author" content="Freer"><meta name="copyright" content="Freer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="Password Manager A simple desktop password management tool   The Password Manager (github repo) is a simple windows desktop application that allows users to manage their passwords securely and easil">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Build Your Own Password Manager with Python">
+<meta property="og:url" content="https://freedempire.github.io/Build-Your-Own-Password-Manager-with-Python/index.html">
+<meta property="og:site_name" content="FREEDEMPIRE | 自由帝國">
+<meta property="og:description" content="Password Manager A simple desktop password management tool   The Password Manager (github repo) is a simple windows desktop application that allows users to manage their passwords securely and easil">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://freedempire.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2023-06-10T10:26:53.000Z">
+<meta property="article:modified_time" content="2023-06-10T11:10:56.885Z">
+<meta property="article:author" content="Freer">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="password">
+<meta property="article:tag" content="cryptography">
+<meta property="article:tag" content="tkinter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://freedempire.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://freedempire.github.io/Build-Your-Own-Password-Manager-with-Python/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: Freer","link":"Link: ","source":"Source: FREEDEMPIRE | 自由帝國","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Build Your Own Password Manager with Python',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-10 21:10:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> Programming</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/programming/learning_logs/"><span> Learning Logs</span></a></li><li><a class="site-page child" href="/programming/projects/"><span> Projects</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background: linear-gradient(to right, #1a2980, #26d0ce)"><nav id="nav"><span id="blog-info"><a href="/" title="FREEDEMPIRE | 自由帝國"><span class="site-name">FREEDEMPIRE | 自由帝國</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> Programming</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/programming/learning_logs/"><span> Learning Logs</span></a></li><li><a class="site-page child" href="/programming/projects/"><span> Projects</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Build Your Own Password Manager with Python</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-06-10T10:26:53.000Z" title="Created 2023-06-10 20:26:53">2023-06-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-06-10T11:10:56.885Z" title="Updated 2023-06-10 21:10:56">2023-06-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Build Your Own Password Manager with Python"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><span class="disqus-comment-count"><a href="https://freedempire.github.io/Build-Your-Own-Password-Manager-with-Python/#disqus_thread"><i class="fa-solid fa-spinner fa-spin"></i></a></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div align="center">
+<img src="https://i.ibb.co/qyjfYBf/cyber-crime.png" width="40%" height="40%" alt="logo" />
+<h1>Password Manager</h1>
+<h3>A simple desktop password management tool</h3>
+</div>
+
+<p>The <strong>Password Manager</strong> <a target="_blank" rel="noopener" href="https://github.com/Freedempire/PasswordManager/blob/master/README.md">(github repo)</a> is a simple <em>windows</em> desktop application that allows users to manage their passwords securely and easily. It uses <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Scrypt">scrypt</a> password-based key derivation function from standard package <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/hashlib.html">hashlib</a> for hashing the master password for each user of the app, and stores the hash value in a database. The password records to be managed are encrypted with unique salt using <a target="_blank" rel="noopener" href="https://cryptography.io/en/latest/fernet/">Fernet</a> from <a target="_blank" rel="noopener" href="https://pypi.org/project/cryptography/">cryptography</a> package.</p>
+<h2 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h2><h3 id="Login-x2F-Signup-Frame"><a href="#Login-x2F-Signup-Frame" class="headerlink" title="Login &#x2F; Signup Frame"></a>Login &#x2F; Signup Frame</h3><p><img src="https://i.ibb.co/YLXjvcQ/screenshot-login.png" alt="login"></p>
+<h3 id="Password-Enties-Frame"><a href="#Password-Enties-Frame" class="headerlink" title="Password Enties Frame"></a>Password Enties Frame</h3><p><img src="https://i.ibb.co/hVKDhNY/screenshot-passwords.png" alt="passwords"></p>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
+<li><strong>Multiple</strong> users can use the app, each with their own password and unique salt.</li>
+<li>Master password is hashed using <strong>scrypt</strong> and stored in database.</li>
+<li>Password records are encrypted with unique salt using <code>Fernet</code> from <code>cryptography</code> package.</li>
+<li>Records can be easily <strong>searched</strong> and <strong>manipulated</strong>.</li>
+<li>App can generate <strong>random</strong> passwords triggered by typing ‘[random]’ in the password input box.</li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><ol>
+<li>Clone the repository to your local machine using <code>git clone https://github.com/Freedempire/PasswordManager.git</code></li>
+<li>Install the required dependencies using <code>pip install -r requirements.txt</code></li>
+<li>Run the app using <code>python pmapp.py</code></li>
+</ol>
+<h2 id="Basic-Usage"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage</h2><ol>
+<li>Create a new user account by entering a new username and password then clicking on the “Sign Up” button and finish the password confirmation.</li>
+<li>Log in to the app using your username and password then clicking on the “Log In” button.</li>
+<li>To add a new password record, fill in the required details then click on the “Add” button.</li>
+<li>To edit a password record, first double-click the record from the list and make modifications as you wish, finally click on the “Update” button.</li>
+<li>To delete a password record, double-click the record from the list and then click on the “Delete” button.</li>
+<li>To generate a random password, simply type in ‘[random]’ in the Password input box of the details section, then press <kbd>Tab</kbd> or <kbd>Enter</kbd> to trigger the auto generation.</li>
+<li>You can also use <kbd>Tab</kbd> or <kbd>Enter</kbd> to jump from one input box to the next while editing password entry.</li>
+<li>The “Clear” button can be used to clear all inputs in the input boxes. It also clears the current selection status, i.e. the status shows which has been lastly double-clicked.</li>
+</ol>
+<h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><p>This app takes security seriously and implements several measures to ensure the safety of user data. The use of scrypt for hashing the master password and unique salt with Fernet for encrypting the password records provide strong protection against brute force and dictionary attacks. Additionally, the app does not store any plaintext passwords or the master key, further reducing the risk of data breaches.</p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>This project is licensed under the MIT License - see the <a target="_blank" rel="noopener" href="https://opensource.org/license/mit/">LICENSE</a> file for details.</p>
+<p>Copyright © Freedempire. All rights reserved.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://freedempire.github.io">Freer</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://freedempire.github.io/Build-Your-Own-Password-Manager-with-Python/">https://freedempire.github.io/Build-Your-Own-Password-Manager-with-Python/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a><a class="post-meta__tags" href="/tags/password/">password</a><a class="post-meta__tags" href="/tags/cryptography/">cryptography</a><a class="post-meta__tags" href="/tags/tkinter/">tkinter</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Password Manager</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.0.1.</span> <span class="toc-text">A simple desktop password management tool</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Screenshots"><span class="toc-number">1.1.</span> <span class="toc-text">Screenshots</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Login-x2F-Signup-Frame"><span class="toc-number">1.1.1.</span> <span class="toc-text">Login &#x2F; Signup Frame</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Password-Enties-Frame"><span class="toc-number">1.1.2.</span> <span class="toc-text">Password Enties Frame</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Features"><span class="toc-number">1.2.</span> <span class="toc-text">Features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-number">1.3.</span> <span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Usage"><span class="toc-number">1.4.</span> <span class="toc-text">Basic Usage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Security"><span class="toc-number">1.5.</span> <span class="toc-text">Security</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#License"><span class="toc-number">1.6.</span> <span class="toc-text">License</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Build-Your-Own-Password-Manager-with-Python/" title="Build Your Own Password Manager with Python">Build Your Own Password Manager with Python</a><time datetime="2023-06-10T10:26:53.000Z" title="Created 2023-06-10 20:26:53">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Freer</div><div class="footer_custom_text">Explore and shape the world and your own being with unfettered freedom.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    btf.addModeChange('mermaid', () => {
+      window.runMermaid()
+    })
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://freedempire.github.io/Build-Your-Own-Password-Manager-with-Python/'
+    this.page.identifier = '/Build-Your-Own-Password-Manager-with-Python/'
+    this.page.title = 'Build Your Own Password Manager with Python'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://freedempire-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script><script>if (window.DISQUSWIDGETS === undefined) {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://freedempire-github-io.disqus.com/count.js';
+  s.id = 'dsq-count-scr';
+  (d.head || d.body).appendChild(s);
+} else {
+  DISQUSWIDGETS.getCount({reset: true});
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
