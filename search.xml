@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>A Simple Blackjack Program</title>
+      <link href="/posts/A-Simple-Blackjack-Program/"/>
+      <url>/posts/A-Simple-Blackjack-Program/</url>
+      
+        <content type="html"><![CDATA[<div align="center"><h1>Simple Blackjack</h1><h3>A CLI single-player blackjack program</h3></div><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> _     _            _    _            _</span><br><span class="line">| |   | |          | |  (_)          | |      ___   ___ </span><br><span class="line">| |__ | | __ _  ___| | ___  __ _  ___| | __  |A  | |K  |</span><br><span class="line">| &#x27;_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /  | ♠ | | ♦ |</span><br><span class="line">| |_) | | (_| | (__|   &lt;| | (_| | (__|   &lt;   |__A| |__K|</span><br><span class="line">|_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\</span><br><span class="line">                       _/ |</span><br><span class="line">                      |__/</span><br></pre></td></tr></table></figure><h2 id="GitHub-repository"><a href="#GitHub-repository" class="headerlink" title="GitHub repository"></a>GitHub repository</h2><p>Click <a href="https://github.com/Freedempire/simple_blackjack">here</a> for the repository.</p><h2 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h2><p><img src="https://i.ibb.co/7KR58JV/simple-blackjack-1.png" alt="screenshot 1"><br><img src="https://i.ibb.co/4sKtmSp/simple-blackjack-2.png" alt="screenshot 2"><br><img src="https://i.ibb.co/thbDkJ5/simple-blackjack-3.png" alt="screenshot 3"><br><img src="https://i.ibb.co/Jd3WxB4/simple-blackjack-4.png" alt="screenshot 4"><br><img src="https://i.ibb.co/TTZF35k/simple-blackjack-5.png" alt="screenshot 5"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> blackjack </tag>
+            
+            <tag> cli </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Kiama Beach</title>
       <link href="/posts/Kiama-Beach/"/>
       <url>/posts/Kiama-Beach/</url>
