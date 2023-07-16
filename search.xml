@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Day 54 of 100 Days of Code</title>
+      <link href="/posts/Day-54-of-100-Days-of-Code/"/>
+      <url>/posts/Day-54-of-100-Days-of-Code/</url>
+      
+        <content type="html"><![CDATA[<style>    #intro {        text-align: center;    }</style><div id="intro">    <h2>Web Development with Flask</h2>    <h3>Learning log: Day 54 of 100 Days of Code</h3></div><h2 id="Understanding-backend-web-development"><a href="#Understanding-backend-web-development" class="headerlink" title="Understanding backend web development"></a>Understanding backend web development</h2><p>Full Stack &#x3D; Front End + Back End</p><h3 id="Front-end"><a href="#Front-end" class="headerlink" title="Front end"></a>Front end</h3><ul><li>HTML: gives website structure</li><li>CSS: gives style</li><li>JavaScript: allows to have interactivity</li><li>Frameworks: Angular, React</li></ul><h3 id="Back-end"><a href="#Back-end" class="headerlink" title="Back end"></a>Back end</h3><ul><li>Can be created by different languages, e.g. Java, JavsScript, Python, Ruby, etc.</li><li>Three components: client, server, database</li><li>Frameworks: Node.js, Flask, Django</li></ul><h2 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h2><h3 id="Key-difference-between-library-and-framework"><a href="#Key-difference-between-library-and-framework" class="headerlink" title="Key difference between library and framework"></a>Key difference between library and framework</h3><p>The <strong>Inversion of Control</strong> (IoC) describes the difference between a library and a framework.</p><p>By using a library, you control the flow of the program. The library can be invoked whenever and wherever you like. Contrary to this, when you use a framework, the flow is controlled by the framework. The framework instructs you where to put your code, but it will call your code as required. Simply put, our code calls the library’s code, but in a framework, it’s the framework’s code that calls our code as shown in the below diagram.</p><p>Developers can invoke libraries to perform specific tasks by using components, classes, and methods. A framework, however, already provides code to perform common tasks and uses code provided by a developer for custom functionality.</p><h2 id="Understand-command-line-on-Windows"><a href="#Understand-command-line-on-Windows" class="headerlink" title="Understand command line on Windows"></a>Understand command line on Windows</h2><h3 id="Creating-new-empty-files-at-CML"><a href="#Creating-new-empty-files-at-CML" class="headerlink" title="Creating new empty files at CML"></a>Creating new empty files at CML</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> . &gt; filename</span><br></pre></td></tr></table></figure><h2 id="Python-decorator"><a href="#Python-decorator" class="headerlink" title="Python decorator"></a>Python decorator</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decorator_function</span>(<span class="params">function</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper_function</span>():</span><br><span class="line">        <span class="comment"># additional functionality</span></span><br><span class="line">        function()</span><br><span class="line">        <span class="comment"># additional functionality</span></span><br><span class="line">    <span class="keyword">return</span> wrapper_function</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> web development </tag>
+            
+            <tag> flask </tag>
+            
+            <tag> backend </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《天道》詩賞析</title>
       <link href="/posts/%E3%80%8A%E5%A4%A9%E9%81%93%E3%80%8B%E8%A9%A9%E8%B3%9E%E6%9E%90/"/>
       <url>/posts/%E3%80%8A%E5%A4%A9%E9%81%93%E3%80%8B%E8%A9%A9%E8%B3%9E%E6%9E%90/</url>
