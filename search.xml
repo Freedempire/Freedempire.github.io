@@ -4,6 +4,68 @@
   
     
     <entry>
+      <title>Day 57 of 100 Days of Code</title>
+      <link href="/posts/Day-57-of-100-Days-of-Code/"/>
+      <url>/posts/Day-57-of-100-Days-of-Code/</url>
+      
+        <content type="html"><![CDATA[<style>    #intro {        text-align: center;    }</style><div id="intro">    <h2>Templating with Jinja in Flask Applications</h2>    <h3>Learning log: Day 57 of 100 Days of Code</h3>    <p>GitHub Repo: <a href="https://github.com/Freedempire/100_days_of_code.git">100_days_of_code</a></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> web development </tag>
+            
+            <tag> flask </tag>
+            
+            <tag> backend </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Day 56 of 100 Days of Code</title>
+      <link href="/posts/Day-56-of-100-Days-of-Code/"/>
+      <url>/posts/Day-56-of-100-Days-of-Code/</url>
+      
+        <content type="html"><![CDATA[<style>    #intro {        text-align: center;    }</style><div id="intro">    <h2>Rendering HTML/Static files and Using Website Templates</h2>    <h3>Learning log: Day 56 of 100 Days of Code</h3>    <p>GitHub Repo: <a href="https://github.com/Freedempire/100_days_of_code.git">100_days_of_code</a></p></div><h2 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h2><h3 id="Static-Files"><a href="#Static-Files" class="headerlink" title="Static Files"></a>Static Files</h3><p>Dynamic web applications also need static files. That’s usually where the CSS and JavaScript files are coming from. Just create a folder called <code>static</code> in your package or next to your module and it will be available at <code>/static</code> on the application.</p><p>To generate URLs for static files, use the special <code>&#39;static&#39;</code> endpoint name:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url_for(<span class="string">&#x27;static&#x27;</span>, filename=<span class="string">&#x27;style.css&#x27;</span>)</span><br></pre></td></tr></table></figure><p>The file has to be stored on the filesystem as static&#x2F;style.css.</p><h3 id="Rendering-Templates"><a href="#Rendering-Templates" class="headerlink" title="Rendering Templates"></a>Rendering Templates</h3><p>Generating HTML from within Python is not fun, and actually pretty cumbersome because you have to do the HTML escaping on your own to keep the application secure. Because of that Flask configures the Jinja2 template engine for you automatically.</p><p>Templates can be used to generate any type of text file. For web applications, you’ll primarily be generating HTML pages, but you can also generate markdown, plain text for emails, and anything else.</p><p>To render a template you can use the <code>render_template()</code> method. All you have to do is provide the name of the template and the variables you want to pass to the template engine as keyword arguments.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> render_template</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/hello/&#x27;</span></span>)</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/hello/&lt;name&gt;&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>(<span class="params">name=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;hello.html&#x27;</span>, name=name)</span><br></pre></td></tr></table></figure><p>Flask will look for templates in the templates folder. So if your application is a module, this folder is next to that module, if it’s a package it’s actually inside your package.</p><p>For templates you can use the full power of Jinja2 templates. Head over to the official <a href="https://jinja.palletsprojects.com/templates/">Jinja2 Template Documentation</a> for more information.</p><p>Here is an example template:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello from Flask<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">&#123;% if name %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello &#123;&#123; name &#125;&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">&#123;% else %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><p>Inside templates you also have access to the config, request, session and g objects as well as the <code>url_for()</code> and <code>get_flashed_messages()</code> functions.</p><p>Templates are especially useful if inheritance is used. If you want to know how that works, see <a href="https://flask.palletsprojects.com/en/2.3.x/patterns/templateinheritance/">Template Inheritance</a>. Basically template inheritance makes it possible to keep certain elements on each page (like header, navigation and footer).</p><p>Automatic escaping is enabled, so if name contains HTML it will be escaped automatically. If you can trust a variable and you know that it will be safe HTML (for example because it came from a module that converts wiki markup to HTML) you can mark it as safe by using the Markup class or by using the <code>|safe</code> filter in the template.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> web development </tag>
+            
+            <tag> flask </tag>
+            
+            <tag> backend </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Day 55 of 100 Days of Code</title>
       <link href="/posts/Day-55-of-100-Days-of-Code/"/>
       <url>/posts/Day-55-of-100-Days-of-Code/</url>
