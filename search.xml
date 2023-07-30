@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title>Day 69 of 100 Days of Code</title>
+      <link href="/posts/Day-69-of-100-Days-of-Code/"/>
+      <url>/posts/Day-69-of-100-Days-of-Code/</url>
+      
+        <content type="html"><![CDATA[<style>    #intro {        text-align: center;    }    #intro .title {        font-size: 1.5rem;        font-weight: 700;        color: rgb(31, 45, 61);    }    #intro .subtitle {        font-size: 1.2rem;        font-weight: 700;        color: rgb(31, 45, 61);    }</style><div id="intro">    <p class="title">Blog Capstone Project Part 4 - Adding Users</h2>    <p class="subtitle">Learning Log: Day 69 of 100 Days of Code</h3>    <p>GitHub Repo: <a href="https://github.com/Freedempire/100_days_of_code.git">100_days_of_code</a></p></div><h2 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h2><p><img src="https://i.ibb.co/M8q6b4d/Blog-project-part4-1.jpg" alt="Blog screenshot 1"><br><img src="https://i.ibb.co/XW5WxSQ/Blog-project-part4-2.jpg" alt="Blog screenshot 2"><br><img src="https://i.ibb.co/Dwj1KGd/Blog-project-part4-3.jpg" alt="Blog screenshot 3"><br><img src="https://i.ibb.co/Vmq0bHv/Blog-project-part4-4.jpg" alt="Blog screenshot 4"><br><img src="https://i.ibb.co/17RCLWV/Blog-project-part4-5.jpg" alt="Blog screenshot 5"><br><img src="https://i.ibb.co/HXvCVg1/Blog-project-part4-6.jpg" alt="Blog screenshot 6"><br><img src="https://i.ibb.co/5KmQtXc/Blog-project-part4-7.jpg" alt="Blog screenshot 7"><br><img src="https://i.ibb.co/N6XT6dJ/Blog-project-part4-8.jpg" alt="Blog screenshot 8"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> web development </tag>
+            
+            <tag> authentication </tag>
+            
+            <tag> hash </tag>
+            
+            <tag> salt </tag>
+            
+            <tag> encryption </tag>
+            
+            <tag> mixin </tag>
+            
+            <tag> flask-login </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《臨江仙 廿一史彈詞第三段說秦漢開場詞》賞析</title>
       <link href="/posts/%E3%80%8A%E8%87%A8%E6%B1%9F%E4%BB%99-%E5%BB%BF%E4%B8%80%E5%8F%B2%E5%BD%88%E8%A9%9E%E7%AC%AC%E4%B8%89%E6%AE%B5%E8%AA%AA%E7%A7%A6%E6%BC%A2%E9%96%8B%E5%A0%B4%E8%A9%9E%E3%80%8B%E8%B3%9E%E6%9E%90/"/>
       <url>/posts/%E3%80%8A%E8%87%A8%E6%B1%9F%E4%BB%99-%E5%BB%BF%E4%B8%80%E5%8F%B2%E5%BD%88%E8%A9%9E%E7%AC%AC%E4%B8%89%E6%AE%B5%E8%AA%AA%E7%A7%A6%E6%BC%A2%E9%96%8B%E5%A0%B4%E8%A9%9E%E3%80%8B%E8%B3%9E%E6%9E%90/</url>
