@@ -4,6 +4,124 @@
   
     
     <entry>
+      <title>Day 74 of 100 Days of Code</title>
+      <link href="/posts/Day-74-of-100-Days-of-Code/"/>
+      <url>/posts/Day-74-of-100-Days-of-Code/</url>
+      
+        <content type="html"><![CDATA[<style>    #intro {        text-align: center;    }    #intro .title {        font-size: 1.5rem;        font-weight: 700;        color: rgb(31, 45, 61);    }    #intro .subtitle {        font-size: 1.2rem;        font-weight: 700;        color: rgb(31, 45, 61);    }</style><div id="intro">    <p class="title">Resampling and Visualizing Time Series</h2>    <p class="subtitle">Learning Log: Day 74 of 100 Days of Code</h3>    <p>GitHub Repo: <a href="https://github.com/Freedempire/100_days_of_code.git">100_days_of_code</a></p></div><h2 id="Learning-points"><a href="#Learning-points" class="headerlink" title="Learning points"></a>Learning points</h2><ul><li>How to use <code>describe()</code> to quickly see some descriptive statistics at a glance</li><li>How to use <code>resample()</code> to make a time-series data comparable to another by changing the periodicity</li><li>How to work with <code>matplotlib.dates</code> Locators to better style a timeline</li><li>How to find the number of <code>NaN</code> values with <code>isna().values.sum()</code></li><li>How to change the resolution of a chart using the figure’s <code>dpi</code></li><li>How to create dashed <code>&#39;--&#39;</code> and dotted <code>&#39;-.&#39;</code> lines using <code>linestyles</code></li><li>How to use different kinds of markers (e.g., <code>&#39;o&#39;</code> or <code>&#39;^&#39;</code>) on charts</li><li>Fine-tuning the styling of Matplotlib charts by using limits, labels, <code>linewidth</code> and <code>color</code> (both in the form of named colors and HEX codes)</li><li>Using <code>grid()</code> to help visually identify seasonality in a time series</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> pandas </tag>
+            
+            <tag> matplotlib </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Day 73 of 100 Days of Code</title>
+      <link href="/posts/Day-73-of-100-Days-of-Code/"/>
+      <url>/posts/Day-73-of-100-Days-of-Code/</url>
+      
+        <content type="html"><![CDATA[<style>    #intro {        text-align: center;    }    #intro .title {        font-size: 1.5rem;        font-weight: 700;        color: rgb(31, 45, 61);    }    #intro .subtitle {        font-size: 1.2rem;        font-weight: 700;        color: rgb(31, 45, 61);    }</style><div id="intro">    <p class="title">Aggregate & Merge Data with Pandas</h2>    <p class="subtitle">Learning Log: Day 73 of 100 Days of Code</h3>    <p>GitHub Repo: <a href="https://github.com/Freedempire/100_days_of_code.git">100_days_of_code</a></p></div><h2 id="Learning-points"><a href="#Learning-points" class="headerlink" title="Learning points"></a>Learning points</h2><ul><li>combine the <code>groupby()</code> and <code>count()</code> functions to aggregate data</li><li>use the <code>value_counts()</code> function</li><li>use the <code>agg()</code> function to run an operation on a particular column</li><li><code>rename()</code> columns of DataFrames</li><li><code>merge()</code> DataFrames along a particular column</li><li>create a line chart with two separate axes to visualise data that have different scales</li><li>create a scatter plot in Matplotlib</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> pandas </tag>
+            
+            <tag> matplotlib </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Day 72 of 100 Days of Code</title>
+      <link href="/posts/Day-72-of-100-Days-of-Code/"/>
+      <url>/posts/Day-72-of-100-Days-of-Code/</url>
+      
+        <content type="html"><![CDATA[<style>    #intro {        text-align: center;    }    #intro .title {        font-size: 1.5rem;        font-weight: 700;        color: rgb(31, 45, 61);    }    #intro .subtitle {        font-size: 1.2rem;        font-weight: 700;        color: rgb(31, 45, 61);    }</style><div id="intro">    <p class="title">Data Visualisation with Matplotlib</h2>    <p class="subtitle">Learning Log: Day 72 of 100 Days of Code</h3>    <p>GitHub Repo: <a href="https://github.com/Freedempire/100_days_of_code.git">100_days_of_code</a></p></div><h2 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h2><p>Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.</p><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> pandas </tag>
+            
+            <tag> matplotlib </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Day 71 of 100 Days of Code</title>
+      <link href="/posts/Day-71-of-100-Days-of-Code/"/>
+      <url>/posts/Day-71-of-100-Days-of-Code/</url>
+      
+        <content type="html"><![CDATA[<style>    #intro {        text-align: center;    }    #intro .title {        font-size: 1.5rem;        font-weight: 700;        color: rgb(31, 45, 61);    }    #intro .subtitle {        font-size: 1.2rem;        font-weight: 700;        color: rgb(31, 45, 61);    }</style><div id="intro">    <p class="title">Data Exploration with Pandas</h2>    <p class="subtitle">Learning Log: Day 71 of 100 Days of Code</h3>    <p>GitHub Repo: <a href="https://github.com/Freedempire/100_days_of_code.git">100_days_of_code</a></p></div><h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><p>The pandas package is the most important tool at the disposal of Data Scientists and Analysts working in Python today.</p><p>Pandas is derived from the term “panel data”, an econometrics term for data sets that include observations over multiple time periods for the same individuals.</p><p>Through pandas, you get acquainted with your data by cleaning, transforming, and analyzing it.</p><p>For example, say you want to explore a dataset stored in a CSV on your computer. Pandas will extract the data from that CSV into a <strong>DataFrame</strong> — a table, basically — then let you do things like:</p><ul><li>Calculate statistics and answer questions about the data, like<ul><li>What’s the average, median, max, or min of each column?</li><li>Does column A correlate with column B?</li><li>What does the distribution of data in column C look like?</li></ul></li><li>Clean the data by doing things like removing missing values and filtering rows or columns by some criteria</li><li>Visualize the data with help from Matplotlib. Plot bars, lines, histograms, bubbles, and more.</li><li>Store the cleaned, transformed data back into a CSV, other file or database</li></ul><p>Pandas is built on top of the <strong>NumPy</strong> package, meaning a lot of the structure of NumPy is used or replicated in Pandas. Data in pandas is often used to feed statistical analysis in <strong>SciPy</strong>, plotting functions from <strong>Matplotlib</strong>, and machine learning algorithms in <strong>Scikit-learn</strong>.</p><p>Jupyter Notebooks offer a good environment for using pandas to do data exploration and modeling, but pandas can also be used in text editors just as easily.</p><p>Jupyter Notebooks give us the ability to execute code in a particular cell as opposed to running the entire file. This saves a lot of time when working with large datasets and complex transformations. Notebooks also provide an easy way to visualize pandas’ DataFrames and plots.</p><h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><h4 id="Installing-with-Anaconda"><a href="#Installing-with-Anaconda" class="headerlink" title="Installing with Anaconda"></a>Installing with Anaconda</h4><p>The simplest way to install not only pandas, but Python and the most popular packages that make up the SciPy stack (IPython, NumPy, Matplotlib, …) is with Anaconda, a cross-platform (Linux, macOS, Windows) Python distribution for data analytics and scientific computing.</p><h4 id="Installing-with-Miniconda"><a href="#Installing-with-Miniconda" class="headerlink" title="Installing with Miniconda"></a>Installing with Miniconda</h4><p>If you want to have more control on which packages, or have a limited internet bandwidth, then installing pandas with Miniconda may be a better solution.</p><p>Conda is the package manager that the Anaconda distribution is built upon. It is a package manager that is both cross-platform and language agnostic (it can play a similar role to a pip and virtualenv combination).</p><p>Miniconda allows you to create a minimal self contained Python installation, and then use the Conda command to install additional packages.</p><h4 id="Installing-from-PyPI"><a href="#Installing-from-PyPI" class="headerlink" title="Installing from PyPI"></a>Installing from PyPI</h4><p>pandas can be installed via pip from PyPI.</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pandas</span><br></pre></td></tr></table></figure><p>pandas can also be installed with sets of optional dependencies to enable certain functionality. For example, to install pandas with the optional dependencies to read Excel files.</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install <span class="string">&quot;pandas[excel]&quot;</span></span><br></pre></td></tr></table></figure><h3 id="Primary-data-structure-of-pandas-Series-and-DataFrames"><a href="#Primary-data-structure-of-pandas-Series-and-DataFrames" class="headerlink" title="Primary data structure of pandas: Series and DataFrames"></a>Primary data structure of pandas: Series and DataFrames</h3><p>A Series (1D labeled homogeneously-typed array) is essentially a column.</p><p>A DataFrame (general 2D labeled, size-mutable tabular structure with potentially heterogeneously-typed column) is a multi-dimensional table made up of a collection of Series.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> pandas </tag>
+            
+            <tag> csv </tag>
+            
+            <tag> data cleaning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Day 70 of 100 Days of Code</title>
       <link href="/posts/Day-70-of-100-Days-of-Code/"/>
       <url>/posts/Day-70-of-100-Days-of-Code/</url>
