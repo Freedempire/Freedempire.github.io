@@ -1,0 +1,563 @@
+<!DOCTYPE html><html class="hide-aside" lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>The Complete JavaScript Course - DOM Fundamentals | FREEDEMPIRE | 自由帝國</title><meta name="author" content="Freer"><meta name="copyright" content="Freer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="DOM Fundamentals">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Complete JavaScript Course - DOM Fundamentals">
+<meta property="og:url" content="https://freedempire.github.io/posts/The-Complete-JavaScript-Course-DOM-Fundamentals/index.html">
+<meta property="og:site_name" content="FREEDEMPIRE | 自由帝國">
+<meta property="og:description" content="DOM Fundamentals">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.ibb.co/QfQ8BQ1/javascript-cover.png">
+<meta property="article:published_time" content="2023-08-20T10:37:08.000Z">
+<meta property="article:modified_time" content="2023-08-22T22:38:56.695Z">
+<meta property="article:author" content="Freer">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="browser">
+<meta property="article:tag" content="dom">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="element">
+<meta property="article:tag" content="bom">
+<meta property="article:tag" content="selector">
+<meta property="article:tag" content="attribute">
+<meta property="article:tag" content="property">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.ibb.co/QfQ8BQ1/javascript-cover.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://freedempire.github.io/posts/The-Complete-JavaScript-Course-DOM-Fundamentals/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: Freer","link":"Link: ","source":"Source: FREEDEMPIRE | 自由帝國","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'The Complete JavaScript Course - DOM Fundamentals',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-23 08:38:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">81</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> Programming</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/programming/learning_logs/"><span> Learning Logs</span></a></li><li><a class="site-page child" href="/programming/projects/"><span> Projects</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><span> Gallery</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://i.ibb.co/hK4V0NJ/abstract-background-05.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="FREEDEMPIRE | 自由帝國"><span class="site-name">FREEDEMPIRE | 自由帝國</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> Tags</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> Programming</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/programming/learning_logs/"><span> Learning Logs</span></a></li><li><a class="site-page child" href="/programming/projects/"><span> Projects</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/gallery/"><span> Gallery</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">The Complete JavaScript Course - DOM Fundamentals</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-08-20T10:37:08.000Z" title="Created 2023-08-20 20:37:08">2023-08-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-08-22T22:38:56.695Z" title="Updated 2023-08-23 08:38:56">2023-08-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/javascript/">javascript</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="The Complete JavaScript Course - DOM Fundamentals"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><span class="disqus-comment-count"><a href="https://freedempire.github.io/posts/The-Complete-JavaScript-Course-DOM-Fundamentals/#disqus_thread"><i class="fa-solid fa-spinner fa-spin"></i></a></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><style>
+    #intro {
+        text-align: center;
+    }
+    #intro .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: rgb(31, 45, 61);
+    }
+    #intro .subtitle {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: rgb(31, 45, 61);
+    }
+</style>
+
+<div id="intro">
+    <p class="title">DOM Fundamentals</h2>
+    <p class="subtitle">The Complete JavaScript Course</h3>
+</div>
+
+<p>The JavaScript language was initially created for <strong>web browsers</strong>. Since then, it has evolved into a language with many uses and platforms.</p>
+<p>A platform may be a browser, or a web-server or another host, or even a “smart” coffee machine if it can run JavaScript. Each of these provides platform-specific functionality. The JavaScript specification calls that a <strong>host environment</strong>.</p>
+<p>A host environment provides its own objects and functions in addition to the language <em>core</em>. Web browsers give a means to control web pages. Node.js provides server-side features, and so on.</p>
+<h2 id="window-object"><a href="#window-object" class="headerlink" title="window object"></a><code>window</code> object</h2><p>In a web browser, there’s a root object called <code>window</code>. It has two roles:</p>
+<ul>
+<li>It is a global object for JavaScript code, which is built into the environment.</li>
+<li>It represents the “browser window” and provides variables and functions that are available anywhere.</li>
+</ul>
+<p>We can use it as a global object:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sayHi</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// global functions are methods of the global object:</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">sayHi</span>();</span><br></pre></td></tr></table></figure>
+
+<p>And we can use it as a browser window, to show the window height:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="variable language_">window</span>.<span class="property">innerHeight</span>); <span class="comment">// inner window height</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="DOM-Document-Object-Model"><a href="#DOM-Document-Object-Model" class="headerlink" title="DOM (Document Object Model)"></a>DOM (Document Object Model)</h2><p>The Document Object Model, or DOM for short, represents all page content as objects that can be modified.</p>
+<p>The <code>document</code> object is the main “entry point” to the page. We can change or create anything on the page using it.</p>
+<p>For instance:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// change the background color to red</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;red&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change it back after 1 second</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">background</span> = <span class="string">&quot;&quot;</span>, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<p>There’s also a separate specification, CSS Object Model (CSSOM) for CSS rules and stylesheets, that explains how they are represented as objects, and how to read and write them.</p>
+<p>The CSSOM is used together with the DOM when we modify style rules for the document. In practice though, the CSSOM is rarely required, because we rarely need to modify CSS rules from JavaScript.</p>
+<h2 id="BOM-Browser-Object-Model"><a href="#BOM-Browser-Object-Model" class="headerlink" title="BOM (Browser Object Model)"></a>BOM (Browser Object Model)</h2><p>The Browser Object Model (BOM) represents additional objects provided by the browser (host environment) for working with everything except the document.</p>
+<p>For instance:</p>
+<ul>
+<li>The <code>navigator</code> object provides background information about the browser and the operating system. There are many properties, but the two most widely known are: <code>navigator.userAgent</code> – about the current browser, and <code>navigator.platform</code> – about the platform (can help to differentiate between Windows&#x2F;Linux&#x2F;Mac etc).</li>
+<li>The <code>location</code> object allows us to read the current URL and can redirect the browser to a new one.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(location.<span class="property">href</span>); <span class="comment">// shows current URL</span></span><br><span class="line"><span class="keyword">if</span> (<span class="title function_">confirm</span>(<span class="string">&quot;Go to Wikipedia?&quot;</span>)) &#123;</span><br><span class="line">  location.<span class="property">href</span> = <span class="string">&quot;https://wikipedia.org&quot;</span>; <span class="comment">// redirect the browser to another URL</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The functions <code>alert</code>&#x2F;<code>confirm</code>&#x2F;<code>prompt</code> are also a part of the BOM: they are not directly related to the document, but represent pure browser methods for communicating with the user.</p>
+<h2 id="DOM-tree"><a href="#DOM-tree" class="headerlink" title="DOM tree"></a>DOM tree</h2><p>The backbone of an HTML document is tags.</p>
+<p>According to the Document Object Model (DOM), every HTML tag is an object. Nested tags are children of the enclosing one. The text inside a tag is an object as well.</p>
+<p>All these objects are accessible using JavaScript, and we can use them to modify the page.</p>
+<p>For example, <code>document.body</code> is the object representing the <code>&lt;body&gt;</code> tag.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">background</span> = <span class="string">&#x27;red&#x27;</span>; <span class="comment">// make the background red</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">style</span>.<span class="property">background</span> = <span class="string">&#x27;&#x27;</span>, <span class="number">3000</span>); <span class="comment">// return back</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>The DOM represents HTML as a tree structure of tags.</li>
+<li>Every tree node is an object.</li>
+<li>Tags are element nodes (or just elements) and form the tree structure: <code>&lt;html&gt;</code> is at the root, then <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> are its children, etc.</li>
+<li>The text inside elements forms text nodes. A text node contains only a string. It may not have children and is always a leaf of the tree.</li>
+<li>Spaces and newlines are totally valid characters. They form text nodes and become a part of the DOM.<ul>
+<li>Spaces and newlines before <code>&lt;head&gt;</code> are ignored for historical reasons.</li>
+<li>If we put something after <code>&lt;/body&gt;</code>, then that is automatically moved inside the body, at the end, as the HTML spec requires that all content must be inside <code>&lt;body&gt;</code>.</li>
+</ul>
+</li>
+<li>Everything in HTML, even comments, becomes a part of the DOM.</li>
+<li>The <code>&lt;!DOCTYPE...&gt;</code> directive at the very beginning of HTML is also a DOM node. It’s in the DOM tree right before <code>&lt;html&gt;</code>.</li>
+<li>The <code>document</code> object that represents the whole document is a DOM node as well.</li>
+</ul>
+<p>DOM nodes have properties and methods that allow us to travel between them, modify them, move around the page, and more.</p>
+<h2 id="Auto-correction"><a href="#Auto-correction" class="headerlink" title="Auto correction"></a>Auto correction</h2><p>If the browser encounters malformed HTML, it automatically corrects it when making the DOM.</p>
+<p>For instance, the top tag is always <code>&lt;html&gt;</code>. Even if it doesn’t exist in the document, it will exist in the DOM, because the browser will create it. The same goes for <code>&lt;body&gt;</code>.</p>
+<p>While generating the DOM, browsers automatically process errors in the document, close tags and so on.</p>
+<h2 id="Walking-the-DOM"><a href="#Walking-the-DOM" class="headerlink" title="Walking the DOM"></a>Walking the DOM</h2><p>All operations on the DOM start with the <code>document</code> object. That’s the main “entry point” to DOM. From it we can access any node.</p>
+<ul>
+<li>On top<ul>
+<li><code>document.documentElement</code>: <code>&lt;html&gt;</code>.</li>
+<li><code>document.head</code>: <code>&lt;head&gt;</code>.</li>
+<li><code>document.body</code>: <code>&lt;body&gt;</code>. <code>document.body</code> can be <code>null</code>. If a script is inside <code>&lt;head&gt;</code>, then <code>document.body</code> is unavailable, because the browser did not read it yet.</li>
+</ul>
+</li>
+<li>Child nodes<ul>
+<li><code>childNodes</code>: lists all direct child nodes, including text nodes.</li>
+<li><code>firstChild</code>: give fast access to the first children.</li>
+<li><code>lastChild</code>: give fast access to the last children.</li>
+</ul>
+</li>
+<li>Siblings and the parent<ul>
+<li><code>nextSibling</code></li>
+<li><code>previousSibling</code></li>
+<li><code>parentNode</code></li>
+</ul>
+</li>
+<li>Element-only navigation<ul>
+<li><code>children</code>: only those children that are element nodes.</li>
+<li><code>firstElementChild</code></li>
+<li><code>lastElementChild</code></li>
+<li><code>previousElementSibling</code></li>
+<li><code>nextElementSibling</code></li>
+<li><code>parentElement</code>: <code>parentElement</code> and <code>parentNode</code> are usually the same, but with one exception of <code>document.documentElement</code>. <code>document.documentElement.parentNode</code> gets <code>document</code>, while <code>document.documentElement.parentElement</code> gets <code>null</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="DOM-collections"><a href="#DOM-collections" class="headerlink" title="DOM collections"></a>DOM collections</h2><p><code>childNodes</code> looks like an array, but actually a collection – a special array-like iterable object.</p>
+<p>There are two important consequences:</p>
+<ul>
+<li>We can use <code>for..of</code> to iterate over it</li>
+<li>Array methods won’t work, because it’s not an array. But we can use <code>Array.from</code> to create a array from the collection, if we want array methods.</li>
+</ul>
+<p>Almost all DOM collections with minor exceptions are <em>live</em>. In other words, they reflect the current state of DOM.</p>
+<p>Don’t use <code>for..in</code> to loop over collections. The <code>for..in</code> loop iterates over all enumerable properties. And collections have some extra properties that we usually do not want to get.</p>
+<h2 id="Searching-methods"><a href="#Searching-methods" class="headerlink" title="Searching methods"></a>Searching methods</h2><h3 id="getElement"><a href="#getElement" class="headerlink" title="getElement*"></a>getElement*</h3><h4 id="document-getElementById-or-just-id"><a href="#document-getElementById-or-just-id" class="headerlink" title="document.getElementById or just id"></a><code>document.getElementById</code> or just id</h4><p>If an element has the <code>id</code> attribute, we can get the element using the method <code>document.getElementById(id)</code>.</p>
+<p>Also, there’s a global variable named by the id that references the element:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;elem&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;elem-content&quot;</span>&gt;</span>Element<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// elem is a reference to DOM-element with id=&quot;elem&quot;</span></span></span><br><span class="line"><span class="language-javascript">  elem.<span class="property">style</span>.<span class="property">background</span> = <span class="string">&#x27;red&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// id=&quot;elem-content&quot; has a hyphen inside, so it can&#x27;t be a variable name</span></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// ...but we can access it using square brackets: window[&#x27;elem-content&#x27;]</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Unless we declare a JavaScript variable with the same name, then it takes precedence.</p>
+<p>In real life <code>document.getElementById</code> is the preferred method.</p>
+<p>The <code>id</code> must be unique, otherwise the behavior of methods that use it is unpredictable.</p>
+<p>The method <code>getElementById</code> can be called only on <code>document</code> object. It looks for the given <code>id</code> in the whole document.</p>
+<h4 id="getElementsBy"><a href="#getElementsBy" class="headerlink" title="getElementsBy*"></a>getElementsBy*</h4><ul>
+<li><code>elem.getElementsByTagName(tag)</code> looks for elements with the given tag and returns the collection of them. The tag parameter can also be a star <code>&quot;*&quot;</code> for any tags.</li>
+<li><code>elem.getElementsByClassName(className)</code> returns elements that have the given CSS class.</li>
+<li><code>document.getElementsByName(name)</code> returns elements based on the name or id attribute, document-wide.</li>
+</ul>
+<p>These methods are mostly history, as <code>querySelector</code> is more powerful and shorter to write.</p>
+<p>All methods <code>&quot;getElementsBy*&quot;</code> return a <em>live</em> collection. Such collections always reflect the current state of the document and auto-update when it changes.</p>
+<p>In contrast, <code>querySelectorAll</code> returns a <em>static</em> collection.</p>
+<h3 id="querySelector"><a href="#querySelector" class="headerlink" title="querySelector*"></a>querySelector*</h3><h4 id="querySelectorAll"><a href="#querySelectorAll" class="headerlink" title="querySelectorAll"></a><code>querySelectorAll</code></h4><p><code>elem.querySelectorAll(css_selector)</code> returns all elements inside <code>elem</code> matching the given CSS selector.</p>
+<h4 id="querySelector-1"><a href="#querySelector-1" class="headerlink" title="querySelector"></a><code>querySelector</code></h4><p>The call to <code>elem.querySelector(css_selector)</code> returns the first element for the given CSS selector.</p>
+<p>The result is the same as <code>elem.querySelectorAll(css)[0]</code>, but faster and shorter.</p>
+<h3 id="matches"><a href="#matches" class="headerlink" title="matches"></a><code>matches</code></h3><p>The <code>elem.matches(css_selector)</code> does not look for anything, it merely checks if <code>elem</code> matches the given CSS-selector. It returns <code>true</code> or <code>false</code>.</p>
+<p>The method comes in handy when we are iterating over elements and trying to filter out those that interest us.</p>
+<h3 id="closest"><a href="#closest" class="headerlink" title="closest"></a><code>closest</code></h3><p>The method <code>elem.closest(css_selector)</code> looks for the nearest ancestor that matches the CSS-selector. The method closest goes up from the element and checks each of parents. If it matches the selector, then the search stops, and the ancestor is returned.</p>
+<h3 id="contains"><a href="#contains" class="headerlink" title="contains"></a><code>contains</code></h3><p><code>elemA.contains(elemB)</code> returns <code>true</code> if <code>elemB</code> is inside <code>elemA</code> (a descendant of <code>elemA</code>) or when <code>elemA==elemB</code>.</p>
+<h2 id="DOM-node-classes"><a href="#DOM-node-classes" class="headerlink" title="DOM node classes"></a>DOM node classes</h2><p>Different DOM nodes may have different properties. For instance, an element node corresponding to tag <code>&lt;a&gt;</code> has link-related properties, and the one corresponding to <code>&lt;input&gt;</code> has input-related properties and so on. Text nodes are not the same as element nodes. But there are also common properties and methods between all of them, because all classes of DOM nodes form a single hierarchy.</p>
+<p>Each DOM node belongs to the corresponding built-in class.</p>
+<p>Here’s the picture, explanations to follow:</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="552" height="403" viewBox="0 0 552 403"><defs><style>@import url(<a target="_blank" rel="noopener" href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic%7CPT+Mono);@font-face%7Bfont-family:%27PT">https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic%7CPT+Mono);@font-face{font-family:&#39;PT</a> Mono’;font-weight:700;font-style:normal;src:local(‘PT MonoBold’),url(&#x2F;font&#x2F;PTMonoBold.woff2) format(‘woff2’),url(&#x2F;font&#x2F;PTMonoBold.woff) format(‘woff’),url(&#x2F;font&#x2F;PTMonoBold.ttf) format(‘truetype’)}</style></defs><g id="dom" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g id="dom-class-hierarchy.svg"><path id="Rectangle-9" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M181 6h118v28H181z"/><path id="Rectangle-8" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M181 74h118v28H181z"/><text id="EventTarget" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="200.9" y="24">EventTarget</tspan></text><text id="Node" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="225.6" y="91">Node </tspan></text><path id="Line-2" fill="#C06334" fill-rule="nonzero" d="M240.5 39.5l7 14h-6v17h-2v-17h-6l7-14z"/><path id="Rectangle-8-Copy" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M181 144h118v28H181z"/><text id="Element" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="214.8" y="161">Element </tspan></text><path id="Line-2-Copy" fill="#C06334" fill-rule="nonzero" d="M240.5 109.5l7 14h-6v17h-2v-17h-6l7-14z"/><path id="Rectangle-8-Copy-4" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M181 230h118v28H181z"/><text id="HTMLElement" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="200.4" y="247">HTMLElement </tspan></text><path id="Line-2-Copy-4" fill="#C06334" fill-rule="nonzero" d="M240.5 195.5l7 14h-6v17h-2v-17h-6l7-14zM72.5 158.5l7.273 13.86-5.999.117L74 183.98l.02 1-2 .04-.02-1-.226-11.503-5.998.118L72.5 158.5z"/><path id="Rectangle-8-Copy-6" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M171 300h138v28H171z"/><text id="HTMLBodyElement" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="186" y="317">HTMLBodyElement </tspan></text><path id="Line-2-Copy-6" fill="#C06334" fill-rule="nonzero" d="M240.5 265.5l7 14h-6v17h-2v-17h-6l7-14z"/><path id="Rectangle-8-Copy-7" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M1 300h138v28H1z"/><text id="HTMLInputElement" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="13.4" y="317">HTMLInputElement </tspan></text><path id="Line-2-Copy-7" fill="#C06334" fill-rule="nonzero" d="M159 261l-6.753 14.12-3.685-4.736-29.448 22.905-.79.614-1.227-1.578.79-.614 29.448-22.906-3.684-4.735L159 261z"/><path id="Rectangle-8-Copy-8" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M339 300h138v28H339z"/><text id="HTMLAnchorElement" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="348.3" y="317">HTMLAnchorElement </tspan></text><path id="Line-2-Copy-8" fill="#C06334" fill-rule="nonzero" d="M312 261l15.305 3.28-3.749 4.684 29.069 23.255.78.625-1.249 1.562-.78-.625-29.069-23.254-3.748 4.685L312 261z"/><path id="Rectangle-8-Copy-2" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M22 126h98v28H22z"/><text id="Document" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="42.2" y="144">Document </tspan></text><path id="Rectangle-8-Copy-2" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M22 192h98v28H22z"/><text id="HTMLDocument" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="27.8" y="210">HTMLDocument </tspan></text><path id="Line-2-Copy-2" fill="#C06334" fill-rule="nonzero" d="M168 90l-8.862 12.902-2.905-5.251-34.749 19.224-.875.484-.968-1.75.875-.484 34.749-19.224-2.904-5.25L168 90z"/><path id="Rectangle-8-Copy-3" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M369 126h118v28H369z"/><text id="CharacterData" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="381.2" y="144">CharacterData </tspan></text><path id="Line-2-Copy-3" fill="#C06334" fill-rule="nonzero" d="M314 91l15.648.379-2.813 5.299 36.634 19.439.883.468-.937 1.767-.884-.469-36.633-19.439-2.812 5.301L314 91zM458 159l13.93 7.138-4.836 3.552 9.712 13.218.592.806-1.612 1.184-.592-.806-9.712-13.218-4.834 3.553L458 159zM400 158l-1.376 15.592-5.11-3.146-8.662 14.078-.524.852-1.704-1.048.524-.852 8.663-14.078-5.11-3.143L400 158z"/><text id="Document-as-a-whole" fill="#C06334" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="6.6" y="235">Document as a whole</tspan></text><text id="&lt;input-type=&quot;…&quot;&gt;" fill="#C06334" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="13.4" y="341">&lt;input type&#x3D;”…”&gt;</tspan></text><text id="&lt;body&gt;" fill="#C06334" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="220.4" y="341">&lt;body&gt;</tspan></text><text id="&lt;a-href=&quot;…&quot;&gt;" fill="#C06334" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="365.8" y="341">&lt;a href&#x3D;”…”&gt;</tspan></text><text id="&lt;div&gt;...&lt;/div&gt;" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="192.6" y="188" fill="#AF6E24">&lt;</tspan> <tspan x="199.8" y="188" fill="#C06334">div</tspan> <tspan x="221.4" y="188" fill="#AF6E24">&gt;</tspan> <tspan x="228.6" y="188" fill="#DBAF88">…</tspan> <tspan x="250.2" y="188" fill="#AF6E24">&lt;&#x2F;</tspan> <tspan x="264.6" y="188" fill="#C06334">div</tspan> <tspan x="286.2" y="188" fill="#AF6E24">&gt;</tspan></text><path id="Rectangle-8-Copy-3" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M449 192h78v28h-78z"/><text id="Comment" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="463.8" y="210">Comment </tspan></text><text id="&lt;!--comment--&gt;" fill="#C06334" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="442.6" y="237">&lt;!–comment–&gt;</tspan></text><path id="Rectangle-8-Copy-3" fill="#FBF2EC" stroke="#DBAF88" stroke-width="2" d="M342 192h78v28h-78z"/><text id="Text" fill="#AF6E24" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="365.6" y="210">Text </tspan></text><text id="&quot;Hello&quot;" fill="#C06334" font-family="PTMono-Regular, PT Mono" font-size="12" font-weight="normal"><tspan x="356.8" y="237">“Hello”</tspan></text></g></g></svg></p>
+<ul>
+<li><code>EventTarget</code>: the root abstract class for everything. It serves as a base, so that all DOM nodes support events.</li>
+<li>Node: also an abstract class, serving as a base for DOM nodes. It provides the core tree functionality: <code>parentNode</code>, <code>nextSibling</code>, <code>childNodes</code> and so on (they are getters). Objects of <code>Node</code> class are never created. Other classes that inherit from it inherit the its functionality.</li>
+<li><code>Document</code>: often inherited by <code>HTMLDocument</code>, is a document as a whole. The <code>document</code> global object belongs exactly to this class. It serves as an entry point to the DOM.</li>
+<li><code>CharacterData</code>: an abstract class, inherited by: <ul>
+<li><code>Text</code>: the class corresponding to a text inside elements.</li>
+<li><code>Comment</code>: the class for comments. They are not shown, but each comment becomes a member of DOM.</li>
+</ul>
+</li>
+<li><code>Element</code>: the base class for DOM elements. It provides element-level navigation like <code>nextElementSibling</code>, <code>children</code> and searching methods like <code>getElementsByTagName</code>, <code>querySelector</code>. A browser supports not only HTML, but also XML and SVG. So the Element class serves as a base for more specific classes: <code>SVGElement</code>, <code>XMLElement</code> and <code>HTMLElement</code>.</li>
+<li><code>HTMLElement</code>: the basic class for all HTML elements. It is inherited by concrete HTML elements:<ul>
+<li><code>HTMLInputElement</code>: the class for <code>&lt;input&gt;</code> elements,</li>
+<li><code>HTMLBodyElement</code>: the class for <code>&lt;body&gt;</code> elements,</li>
+<li><code>HTMLAnchorElement</code>: the class for <code>&lt;a&gt;</code> elements,</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<p><code>console.dir(elem)</code> shows the element as a DOM object, good to explore its properties.</p>
+<h3 id="The-nodeType-property"><a href="#The-nodeType-property" class="headerlink" title="The nodeType property"></a>The <code>nodeType</code> property</h3><p>The <code>nodeType</code> property provides one more, old-fashioned way to get the type of a DOM node.</p>
+<p>It has a numeric value:</p>
+<ul>
+<li><code>elem.nodeType == 1</code> for element nodes,</li>
+<li><code>elem.nodeType == 3</code> for text nodes,</li>
+<li><code>elem.nodeType == 9</code> for the document object,</li>
+<li>there are few other values in the specification.</li>
+</ul>
+<p>In modern scripts, we can use <code>instanceof</code> and other class-based tests to see the node type.</p>
+<h3 id="nodeName-and-tagName"><a href="#nodeName-and-tagName" class="headerlink" title="nodeName and tagName"></a><code>nodeName</code> and <code>tagName</code></h3><p>Given a DOM node, we can read its tag name from <code>nodeName</code> or <code>tagName</code> properties:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>( <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">nodeName</span> ); <span class="comment">// BODY</span></span><br><span class="line"><span class="title function_">alert</span>( <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">tagName</span> ); <span class="comment">// BODY</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>The tagName property exists only for <code>Element</code> nodes.</li>
+<li>The nodeName is defined for any <code>Node</code>:<ul>
+<li>for elements it means the same as <code>tagName</code>.</li>
+<li>for other node types (text, comment, etc.) it has a string with the node type.</li>
+</ul>
+</li>
+</ul>
+<h3 id="innerHTML-the-contents"><a href="#innerHTML-the-contents" class="headerlink" title="innerHTML: the contents"></a><code>innerHTML</code>: the contents</h3><p>The <code>innerHTML</code> property allows to get the HTML inside the element as a string.</p>
+<p>If innerHTML inserts a <code>&lt;script&gt;</code> tag into the document – it becomes a part of HTML, but doesn’t execute.</p>
+<h3 id="outerHTML-full-HTML-of-the-element"><a href="#outerHTML-full-HTML-of-the-element" class="headerlink" title="outerHTML: full HTML of the element"></a><code>outerHTML</code>: full HTML of the element</h3><p>The outerHTML property contains the full HTML of the element. That’s like innerHTML plus the element itself.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;elem&quot;</span>&gt;<span class="title class_">Hello</span> &lt;b&gt;<span class="title class_">World</span>&lt;<span class="regexp">/b&gt;&lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml">  alert(elem.outerHTML); // <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;elem&quot;</span>&gt;</span>Hello <span class="tag">&lt;<span class="name">b</span>&gt;</span>World<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"><span class="language-xml"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Unlike innerHTML, writing to <code>outerHTML</code> does not change the value of the element. Instead, it replaces the corresponding HTML content in the page.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;<span class="title class_">Hello</span>, world!&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">let</span> div = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;div&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// replace div.outerHTML with &lt;p&gt;...&lt;/p&gt;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  div.<span class="property">outerHTML</span> = <span class="string">&#x27;&lt;p&gt;A new element&lt;/p&gt;&#x27;</span>; <span class="comment">// (*)</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// Wow! &#x27;div&#x27; is still the same!</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">alert</span>(div.<span class="property">outerHTML</span>); <span class="comment">// &lt;div&gt;Hello, world!&lt;/div&gt; (**)</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>What happened in <code>div.outerHTML=...</code> is:</p>
+<ul>
+<li><code>&lt;div&gt;Hello, world!&lt;/div&gt;</code> was removed from the document.</li>
+<li>Another piece of HTML <code>&lt;p&gt;A new element&lt;/p&gt;</code> was inserted in its place in the document.</li>
+<li><code>div</code> variable still has its old value. The new HTML wasn’t saved to any variable.</li>
+</ul>
+<h3 id="Text-node-content"><a href="#Text-node-content" class="headerlink" title="Text node content"></a>Text node content</h3><p>The <code>innerHTML</code> property is only valid for element nodes.</p>
+<p>Other node types, such as text nodes, have their counterpart: <code>nodeValue</code> and <code>data</code> properties. These two are almost the same for practical use, there are only minor specification differences.</p>
+<h3 id="innerText-and-textContent"><a href="#innerText-and-textContent" class="headerlink" title="innerText and textContent"></a><code>innerText</code> and <code>textContent</code></h3><ul>
+<li><code>innerText</code> returns the visible text contained in a node, while <code>textContent</code> returns the full text. For example, on the following <code>HTML &lt;span&gt;Hello &lt;span style=&quot;display: none;&quot;&gt;World&lt;/span&gt;&lt;/span&gt;</code>, <code>innerText</code> will return <code>&#39;Hello&#39;</code>, while <code>textContent</code> will return <code>&#39;Hello World&#39;</code>.</li>
+<li>As a result, <code>innerText</code> is much more performance-heavy: it requires layout information to return the result.</li>
+<li><code>innerText</code> is defined only for <code>HTMLElement</code> objects, while <code>textContent</code> is defined for all <code>Node</code> objects.</li>
+</ul>
+<h3 id="The-hidden-property"><a href="#The-hidden-property" class="headerlink" title="The hidden property"></a>The <code>hidden</code> property</h3><p>The <code>hidden</code> attribute and the DOM property specifies whether the <em>element</em> is visible or not.</p>
+<p>We can use it in HTML or assign it using JavaScript, like this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;<span class="title class_">Both</span> divs below are hidden&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">hidden</span>&gt;</span>With the attribute &quot;hidden&quot;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;elem&quot;</span>&gt;</span>JavaScript assigned the property &quot;hidden&quot;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  elem.<span class="property">hidden</span> = <span class="literal">true</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Technically, hidden has the same effect as <code>style=&quot;display:none&quot;</code>.</p>
+<p>Here’s a blinking element:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;elem&quot;</span>&gt;A blinking element&lt;/div&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> elem.<span class="property">hidden</span> = !elem.<span class="property">hidden</span>, <span class="number">1000</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="More-properties"><a href="#More-properties" class="headerlink" title="More properties"></a>More properties</h3><p>DOM elements also have additional properties, in particular those that depend on the class:</p>
+<ul>
+<li><code>value</code>: the <code>value</code> for <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code> and <code>&lt;textarea&gt;</code> (<code>HTMLInputElement</code>, <code>HTMLSelectElement</code>…).</li>
+<li><code>href</code>: the <code>href</code> for <code>&lt;a href=&quot;...&quot;&gt;</code> (<code>HTMLAnchorElement</code>).</li>
+<li><code>id</code>: the value of <code>id</code> attribute, for all elements (<code>HTMLElement</code>).</li>
+<li>and much more</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;text&quot;</span> id=<span class="string">&quot;elem&quot;</span> value=<span class="string">&quot;value&quot;</span>&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">alert</span>(elem.<span class="property">type</span>); <span class="comment">// &quot;text&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">alert</span>(elem.<span class="property">id</span>); <span class="comment">// &quot;elem&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">alert</span>(elem.<span class="property">value</span>); <span class="comment">// value</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Most standard HTML attributes have the corresponding DOM property, and we can access it like that.</p>
+<p>We can always output the element using <code>console.dir(elem)</code> and read the properties. Or explore DOM properties in the Elements tab of the browser developer tools.</p>
+<h2 id="Attributes-and-properties"><a href="#Attributes-and-properties" class="headerlink" title="Attributes and properties"></a>Attributes and properties</h2><p>When the browser loads the page, it reads&#x2F;parses the HTML and generates DOM objects from it. For element nodes, most standard HTML attributes automatically become properties of DOM objects.</p>
+<h3 id="DOM-properties"><a href="#DOM-properties" class="headerlink" title="DOM properties"></a>DOM properties</h3><p>DOM nodes are regular JavaScript objects. We can alter them.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">myData</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;Caesar&#x27;</span>,</span><br><span class="line">  <span class="attr">title</span>: <span class="string">&#x27;Imperator&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">myData</span>.<span class="property">title</span>); <span class="comment">// Imperator</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">sayTagName</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">tagName</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">sayTagName</span>(); <span class="comment">// BODY (the value of &quot;this&quot; in the method is document.body)</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Element</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayHi</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">`Hello, I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.tagName&#125;</span>`</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="title function_">sayHi</span>(); <span class="comment">// Hello, I&#x27;m HTML</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">sayHi</span>(); <span class="comment">// Hello, I&#x27;m BODY</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="HTML-attributes"><a href="#HTML-attributes" class="headerlink" title="HTML attributes"></a>HTML attributes</h3><p>In HTML, tags may have attributes. When the browser parses the HTML to create DOM objects for tags, it recognizes <em>standard</em> attributes and creates DOM properties from them. But that doesn’t happen if the attribute is non-standard.</p>
+<p>All attributes, whether standard or non-standard, are accessible by using the following methods:</p>
+<ul>
+<li><code>elem.hasAttribute(name)</code>: checks for existence.</li>
+<li><code>elem.getAttribute(name)</code>: gets the value.</li>
+<li><code>elem.setAttribute(name, value)</code>: sets the value.</li>
+<li><code>elem.removeAttribute(name)</code>: removes the attribute.</li>
+</ul>
+<p>Also one can read all attributes using <code>elem.attributes</code>: a collection of objects that belong to a built-in Attr class, with name and value properties.</p>
+<p>HTML attributes have the following features:</p>
+<ul>
+<li><p>Their name is case-insensitive (<code>id</code> is same as <code>ID</code>).</p>
+</li>
+<li><p>Their values are always strings.</p>
+</li>
+<li><p>We can assign anything to an attribute, but it becomes a string.</p>
+</li>
+<li><p>All attributes including ones that we set are visible in <code>outerHTML</code>.</p>
+</li>
+<li><p>The attributes collection is iterable and has all the attributes of the element (standard and non-standard) as objects with <code>name</code> and <code>value</code> properties.</p>
+</li>
+</ul>
+<p>When a standard attribute changes, the corresponding property is auto-updated, and (with some exceptions) vice versa.</p>
+<p>But there are exclusions, for instance <code>input.value</code> synchronizes only from attribute → property, but not back.</p>
+<h3 id="DOM-properties-are-typed"><a href="#DOM-properties-are-typed" class="headerlink" title="DOM properties are typed"></a>DOM properties are typed</h3><p>DOM properties are not always strings.</p>
+<p>For instance, the <code>input.checked</code> property (for checkboxes) is a boolean. The <code>style</code> attribute is a string, but the <code>style</code> property is an object.</p>
+<p>Even if a DOM property type is a string, it may differ from the attribute. For instance, the <code>href</code> DOM property is always a full URL, even if the attribute contains a relative URL or just a <code>#hash</code>.</p>
+<h3 id="Non-standard-attributes"><a href="#Non-standard-attributes" class="headerlink" title="Non-standard attributes"></a>Non-standard attributes</h3><p>Sometimes non-standard attributes are used to pass custom data from HTML to JavaScript, or to mark HTML-elements for JavaScript.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- mark the div to show <span class="string">&quot;name&quot;</span> here --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">show-info</span>=<span class="string">&quot;name&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;!-- and age here --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">show-info</span>=<span class="string">&quot;age&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="comment">// the code finds an element with the mark and shows what&#x27;s requested</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">let</span> user = &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">name</span>: <span class="string">&quot;Pete&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">age</span>: <span class="number">25</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">for</span>(<span class="keyword">let</span> div <span class="keyword">of</span> <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;[show-info]&#x27;</span>)) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// insert the corresponding info into the field</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">let</span> field = div.<span class="title function_">getAttribute</span>(<span class="string">&#x27;show-info&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    div.<span class="property">innerHTML</span> = user[field]; <span class="comment">// first Pete into &quot;name&quot;, then 25 into &quot;age&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Also they can be used to style an element.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  <span class="comment">/* styles rely on the custom attribute &quot;order-state&quot; */</span></span><br><span class="line">  .<span class="property">order</span>[order-state=<span class="string">&quot;new&quot;</span>] &#123;</span><br><span class="line">    <span class="attr">color</span>: green;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .<span class="property">order</span>[order-state=<span class="string">&quot;pending&quot;</span>] &#123;</span><br><span class="line">    <span class="attr">color</span>: blue;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .<span class="property">order</span>[order-state=<span class="string">&quot;canceled&quot;</span>] &#123;</span><br><span class="line">    <span class="attr">color</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;order&quot;</span> <span class="attr">order-state</span>=<span class="string">&quot;new&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  A new order.</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;order&quot;</span> <span class="attr">order-state</span>=<span class="string">&quot;pending&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  A pending order.</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;order&quot;</span> <span class="attr">order-state</span>=<span class="string">&quot;canceled&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  A canceled order.</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Why would using an attribute be preferable to having classes like <code>.order-state-new</code>?</p>
+<p>Because an attribute is more convenient to manage. The state can be changed as easy as:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a bit simpler than removing old/adding a new class</span></span><br><span class="line">div.<span class="title function_">setAttribute</span>(<span class="string">&#x27;order-state&#x27;</span>, <span class="string">&#x27;canceled&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>To avoid conflicts between custom attributes and possible future standard attributes, there exist <code>data-*</code> attributes.</p>
+<p>All attributes starting with “data-“ are reserved for programmers’ use. They are available in the dataset property.</p>
+<p>If an elem has an attribute named <code>&quot;data-about&quot;</code>, it’s available as <code>elem.dataset.about</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body data-about=<span class="string">&quot;Elephants&quot;</span>&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">dataset</span>.<span class="property">about</span>); <span class="comment">// Elephants</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>Multi-word attributes like <code>data-order-state</code> become camel-cased: <code>dataset.orderState</code>.</p>
+<h2 id="Modifying-the-document"><a href="#Modifying-the-document" class="headerlink" title="Modifying the document"></a>Modifying the document</h2><p>Methods to create new nodes:</p>
+<ul>
+<li><code>document.createElement(tag)</code>: creates an element with the given tag,</li>
+<li><code>document.createTextNode(value)</code>: creates a text node, rarely used,</li>
+<li><code>elem.cloneNode(deep)</code>: clones the element, if <code>deep==true</code> then with all descendants, otherwise no child elements.</li>
+</ul>
+<p>Insertion and removal:</p>
+<ul>
+<li><code>node.append(...nodes or strings)</code>: insert into node, at the end,</li>
+<li><code>node.prepend(...nodes or strings)</code>: insert into node, at the beginning,</li>
+<li><code>node.before(...nodes or strings)</code>: insert right before node,</li>
+<li><code>node.after(...nodes or strings)</code>: insert right after node,</li>
+<li><code>node.replaceWith(...nodes or strings)</code>: replace node.</li>
+<li><code>node.remove()</code>: remove the node.</li>
+</ul>
+<p>Text strings are inserted as text, not as HTML.</p>
+<p>If we want to move an element to another place – there’s no need to remove it from the old one. All insertion methods automatically remove the node from the old place.</p>
+<p>Given some HTML in html, <code>elem.insertAdjacentHTML(where, html)</code> inserts it depending on the value of <code>where</code>:</p>
+<ul>
+<li><code>&quot;beforebegin&quot;</code>: insert html right before <code>elem</code>,</li>
+<li><code>&quot;afterbegin&quot;</code>: insert html into <code>elem</code>, at the beginning,</li>
+<li><code>&quot;beforeend&quot;</code>: insert html into <code>elem</code>, at the end,</li>
+<li><code>&quot;afterend&quot;</code>: insert html right after <code>elem</code>.</li>
+</ul>
+<p>Also there are similar methods, <code>elem.insertAdjacentText</code> and <code>elem.insertAdjacentElement</code>, that insert text strings and elements, but they are rarely used.</p>
+<p>To append HTML to the page before it has finished loading:</p>
+<p><code>document.write(html)</code></p>
+<p>After the page is loaded such a call erases the document. Mostly seen in old scripts.</p>
+<h3 id="DocumentFragment"><a href="#DocumentFragment" class="headerlink" title="DocumentFragment"></a><code>DocumentFragment</code></h3><p><code>DocumentFragment</code> is a special DOM node that serves as a wrapper to pass around lists of nodes.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=<span class="string">&quot;ul&quot;</span>&gt;&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">function</span> <span class="title function_">getListContent</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">let</span> fragment = <span class="keyword">new</span> <span class="title class_">DocumentFragment</span>();</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;=<span class="number">3</span>; i++) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">let</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    li.<span class="title function_">append</span>(i);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    fragment.<span class="title function_">append</span>(li);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">return</span> fragment;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">ul.<span class="title function_">append</span>(<span class="title function_">getListContent</span>()); <span class="comment">// (*)</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=<span class="string">&quot;ul&quot;</span>&gt;&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">function</span> <span class="title function_">getListContent</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">let</span> result = [];</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;=<span class="number">3</span>; i++) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">let</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    li.<span class="title function_">append</span>(i);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    result.<span class="title function_">push</span>(li);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">return</span> result;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">ul.<span class="title function_">append</span>(...<span class="title function_">getListContent</span>());</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Styles-and-classes"><a href="#Styles-and-classes" class="headerlink" title="Styles and classes"></a>Styles and classes</h2><p>To manage classes, there are two DOM properties:</p>
+<ul>
+<li><code>className</code>: the string value, corresponds to the <code>&quot;class&quot;</code> attribute, good to manage the whole set of classes.</li>
+<li><code>classList</code>: the object with methods <code>add</code>&#x2F;<code>remove</code>&#x2F;<code>toggle</code>&#x2F;<code>contains</code>, good for individual classes. <code>classList</code> is iterable, so we can list all classes with <code>for...of</code>.</li>
+</ul>
+<p>To change the styles:</p>
+<p>The style property is an object with camelCased styles. Reading and writing to it has the same meaning as modifying individual properties in the <code>&quot;style&quot;</code> attribute.</p>
+<p>Browser-prefixed properties like <code>-moz-border-radius</code> also follow the same rule: a dash means upper case.</p>
+<p>For instance:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">button.<span class="property">style</span>.<span class="property">MozBorderRadius</span> = <span class="string">&#x27;5px&#x27;</span>;</span><br><span class="line">button.<span class="property">style</span>.<span class="property">WebkitBorderRadius</span> = <span class="string">&#x27;5px&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>The <code>style.cssTex</code>t property corresponds to the whole <code>&quot;style&quot;</code> attribute, the full string of styles.</p>
+<p>To reset a style property:</p>
+<ul>
+<li>We can set <code>elem.style.display = &quot;none&quot;</code> to hide an element. Then later if we may want to remove the <code>style.display</code>, we should assign an empty string to it: <code>elem.style.display = &quot;&quot;</code>.</li>
+<li>Also there is a special method for that, <code>elem.style.removeProperty(&#39;style property&#39;)</code>.</li>
+</ul>
+<p>To read the resolved styles (with respect to all classes, after all CSS is applied and final values are calculated):</p>
+<ul>
+<li>The <code>getComputedStyle(elem, [pseudo])</code> returns the style-like object with them. Read-only.</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://freedempire.github.io">Freer</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://freedempire.github.io/posts/The-Complete-JavaScript-Course-DOM-Fundamentals/">https://freedempire.github.io/posts/The-Complete-JavaScript-Course-DOM-Fundamentals/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/javascript/">javascript</a><a class="post-meta__tags" href="/tags/browser/">browser</a><a class="post-meta__tags" href="/tags/dom/">dom</a><a class="post-meta__tags" href="/tags/node/">node</a><a class="post-meta__tags" href="/tags/element/">element</a><a class="post-meta__tags" href="/tags/bom/">bom</a><a class="post-meta__tags" href="/tags/selector/">selector</a><a class="post-meta__tags" href="/tags/attribute/">attribute</a><a class="post-meta__tags" href="/tags/property/">property</a></div><div class="post_share"><div class="social-share" data-image="https://i.ibb.co/QfQ8BQ1/javascript-cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/The-Complete-JavaScript-Course-Fundamentals/" title="The Complete JavaScript Course - Fundamentals"><img class="cover" src="https://i.ibb.co/QfQ8BQ1/javascript-cover.png" onerror="onerror=null;src='/img/image_404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">The Complete JavaScript Course - Fundamentals</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/The-Complete-JavaScript-Course-Fundamentals/" title="The Complete JavaScript Course - Fundamentals"><img class="cover" src="https://i.ibb.co/QfQ8BQ1/javascript-cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-16</div><div class="title">The Complete JavaScript Course - Fundamentals</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#window-object"><span class="toc-number">1.</span> <span class="toc-text">window object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-Document-Object-Model"><span class="toc-number">2.</span> <span class="toc-text">DOM (Document Object Model)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM-Browser-Object-Model"><span class="toc-number">3.</span> <span class="toc-text">BOM (Browser Object Model)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-tree"><span class="toc-number">4.</span> <span class="toc-text">DOM tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Auto-correction"><span class="toc-number">5.</span> <span class="toc-text">Auto correction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Walking-the-DOM"><span class="toc-number">6.</span> <span class="toc-text">Walking the DOM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-collections"><span class="toc-number">7.</span> <span class="toc-text">DOM collections</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Searching-methods"><span class="toc-number">8.</span> <span class="toc-text">Searching methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getElement"><span class="toc-number">8.1.</span> <span class="toc-text">getElement*</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#document-getElementById-or-just-id"><span class="toc-number">8.1.1.</span> <span class="toc-text">document.getElementById or just id</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getElementsBy"><span class="toc-number">8.1.2.</span> <span class="toc-text">getElementsBy*</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#querySelector"><span class="toc-number">8.2.</span> <span class="toc-text">querySelector*</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#querySelectorAll"><span class="toc-number">8.2.1.</span> <span class="toc-text">querySelectorAll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#querySelector-1"><span class="toc-number">8.2.2.</span> <span class="toc-text">querySelector</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#matches"><span class="toc-number">8.3.</span> <span class="toc-text">matches</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#closest"><span class="toc-number">8.4.</span> <span class="toc-text">closest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#contains"><span class="toc-number">8.5.</span> <span class="toc-text">contains</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-node-classes"><span class="toc-number">9.</span> <span class="toc-text">DOM node classes</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-nodeType-property"><span class="toc-number">9.1.</span> <span class="toc-text">The nodeType property</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodeName-and-tagName"><span class="toc-number">9.2.</span> <span class="toc-text">nodeName and tagName</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#innerHTML-the-contents"><span class="toc-number">9.3.</span> <span class="toc-text">innerHTML: the contents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outerHTML-full-HTML-of-the-element"><span class="toc-number">9.4.</span> <span class="toc-text">outerHTML: full HTML of the element</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Text-node-content"><span class="toc-number">9.5.</span> <span class="toc-text">Text node content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#innerText-and-textContent"><span class="toc-number">9.6.</span> <span class="toc-text">innerText and textContent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-hidden-property"><span class="toc-number">9.7.</span> <span class="toc-text">The hidden property</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#More-properties"><span class="toc-number">9.8.</span> <span class="toc-text">More properties</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Attributes-and-properties"><span class="toc-number">10.</span> <span class="toc-text">Attributes and properties</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-properties"><span class="toc-number">10.1.</span> <span class="toc-text">DOM properties</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML-attributes"><span class="toc-number">10.2.</span> <span class="toc-text">HTML attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-properties-are-typed"><span class="toc-number">10.3.</span> <span class="toc-text">DOM properties are typed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Non-standard-attributes"><span class="toc-number">10.4.</span> <span class="toc-text">Non-standard attributes</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modifying-the-document"><span class="toc-number">11.</span> <span class="toc-text">Modifying the document</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DocumentFragment"><span class="toc-number">11.1.</span> <span class="toc-text">DocumentFragment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styles-and-classes"><span class="toc-number">12.</span> <span class="toc-text">Styles and classes</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/The-Complete-JavaScript-Course-DOM-Fundamentals/" title="The Complete JavaScript Course - DOM Fundamentals">The Complete JavaScript Course - DOM Fundamentals</a><time datetime="2023-08-20T10:37:08.000Z" title="Created 2023-08-20 20:37:08">2023-08-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/The-Complete-JavaScript-Course-Fundamentals/" title="The Complete JavaScript Course - Fundamentals">The Complete JavaScript Course - Fundamentals</a><time datetime="2023-08-16T10:23:14.000Z" title="Created 2023-08-16 20:23:14">2023-08-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/PDSA-Linked-Lists/" title="Python Data Structures and Algorithms - Linked Lists">Python Data Structures and Algorithms - Linked Lists</a><time datetime="2023-08-08T09:05:41.000Z" title="Created 2023-08-08 19:05:41">2023-08-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/PDSA-Pointers/" title="Python Data Structures and Algorithms - Pointers">Python Data Structures and Algorithms - Pointers</a><time datetime="2023-08-07T22:34:13.000Z" title="Created 2023-08-08 08:34:13">2023-08-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/PDSA-Big-O/" title="Python Data Structures and Algorithms - Big O">Python Data Structures and Algorithms - Big O</a><time datetime="2023-08-07T11:36:43.000Z" title="Created 2023-08-07 21:36:43">2023-08-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/Day-74-of-100-Days-of-Code/" title="Day 74 of 100 Days of Code">Day 74 of 100 Days of Code</a><time datetime="2023-08-05T07:36:58.000Z" title="Created 2023-08-05 17:36:58">2023-08-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Freer</div><div class="footer_custom_text">Explore and shape the world and your own being with unfettered freedom.</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    btf.addModeChange('mermaid', () => {
+      window.runMermaid()
+    })
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://freedempire.github.io/posts/The-Complete-JavaScript-Course-DOM-Fundamentals/'
+    this.page.identifier = '/posts/The-Complete-JavaScript-Course-DOM-Fundamentals/'
+    this.page.title = 'The Complete JavaScript Course - DOM Fundamentals'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://freedempire-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script><script>if (window.DISQUSWIDGETS === undefined) {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://freedempire-github-io.disqus.com/count.js';
+  s.id = 'dsq-count-scr';
+  (d.head || d.body).appendChild(s);
+} else {
+  DISQUSWIDGETS.getCount({reset: true});
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
